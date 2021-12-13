@@ -29,21 +29,15 @@ namespace InsertRow
             if (element != null)
             {
                 HtmlElement hr = this.htmlEditControl1.Document.CreateElement("hr");
-<<<<<<< HEAD
                 hr.Style = "border: 5px solid red";
-=======
-                hr.Style = "border: 5px solid red"; 
->>>>>>> c019fa3c7af02696601dc950aa2311d355b11c34
+
                 HtmlElement hr2 = this.htmlEditControl1.Document.CreateElement("hr");
                 hr2.Style = "border: 5px solid red";
 
                 element.InsertAdjacentElement(HtmlElementInsertionOrientation.BeforeBegin, hr);
                 element.InsertAdjacentElement(HtmlElementInsertionOrientation.AfterEnd, hr2);
-<<<<<<< HEAD
 
                 this.htmlEditControl1.SetDirty(true);
-=======
->>>>>>> c019fa3c7af02696601dc950aa2311d355b11c34
             }
         }
 
@@ -68,6 +62,7 @@ namespace InsertRow
                 newRow2.Style = "background-color: red";
                 element.InsertAdjacentElement(HtmlElementInsertionOrientation.BeforeEnd, newRow2);
 
+                this.htmlEditControl1.SetDirty(true);
             }
         }
 
@@ -88,5 +83,9 @@ namespace InsertRow
 
         }
 
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            MessageBox.Show(this.htmlEditControl1.DocumentHTML);
+        }
     }
 }
